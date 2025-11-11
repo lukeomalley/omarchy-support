@@ -35,6 +35,16 @@ Install GNU Stow:
 sudo pacman -S stow
 ```
 
+## Helper Scripts
+
+This repository includes helper scripts to make management easier:
+
+- **`./status.sh`** - Shows all packages and whether they're currently stowed
+- **`./add-config.sh`** - Automates adding a new configuration to the repo
+  ```bash
+  ./add-config.sh hypr ~/.config/hypr/hyprland.conf
+  ```
+
 ## Usage
 
 ### Installing Configurations
