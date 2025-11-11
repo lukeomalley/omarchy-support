@@ -28,38 +28,42 @@ omarchy-dotfiles/
 └── ...
 ```
 
-## Prerequisites
+## Installation
 
-Install GNU Stow:
+### Prerequisites
 ```bash
 sudo pacman -S stow
 ```
 
-## Quick Install
+### Quick Setup
 
-### Step 1: Install Programs
-
-First, install all required programs:
+**1. Install Programs** - Installs Ghostty (from AUR) and Tmux + TPM:
 ```bash
 ./scripts/app-install/install-all.sh
 ```
 
-This will install:
-- Ghostty terminal emulator (from AUR)
-- Tmux + TPM (Tmux Plugin Manager)
-
-### Step 2: Stow Dotfiles
-
-Then, link your configuration files:
+**2. Link Configurations** - Creates symlinks with stow (backs up existing configs):
 ```bash
 ./scripts/install-dotfiles.sh
 ```
 
-This will:
-- Backup your existing configs to `~/.dotfiles-backup/`
-- Remove old configs
-- Create symlinks with stow
-- Handle everything automatically!
+**3. Apply Changes** - Restart terminals and start tmux to install plugins (`Ctrl+Space + I`)
+
+### Programs Installed
+
+The `install-all.sh` script automatically installs:
+
+| Program | Source | Description |
+|---------|--------|-------------|
+| **Ghostty** | AUR (via yay/paru) | Fast, feature-rich terminal emulator |
+| **Tmux** | pacman | Terminal multiplexer for managing multiple sessions |
+| **TPM** | GitHub | Tmux Plugin Manager (auto-cloned to `~/.tmux/plugins/tpm`) |
+
+**Individual Installation:**
+```bash
+./scripts/app-install/ghostty.sh    # Install just Ghostty
+./scripts/app-install/tmux.sh       # Install just Tmux + TPM
+```
 
 ## Helper Scripts
 
