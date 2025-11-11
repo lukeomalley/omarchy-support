@@ -37,7 +37,20 @@ sudo pacman -S stow
 
 ## Quick Install
 
-For first-time setup, just run:
+### Step 1: Install Programs
+
+First, install all required programs:
+```bash
+./scripts/install-all.sh
+```
+
+This will install:
+- Ghostty terminal emulator (from AUR)
+- Tmux + TPM (Tmux Plugin Manager)
+
+### Step 2: Stow Dotfiles
+
+Then, link your configuration files:
 ```bash
 ./scripts/install.sh
 ```
@@ -52,11 +65,18 @@ This will:
 
 All helper scripts are located in the `scripts/` directory:
 
+### Configuration Management
+- **`./scripts/install.sh`** - Stow dotfiles (create symlinks)
 - **`./scripts/status.sh`** - Shows all packages and whether they're currently stowed
 - **`./scripts/add-config.sh`** - Automates adding a new configuration to the repo
   ```bash
   ./scripts/add-config.sh hypr ~/.config/hypr/hyprland.conf
   ```
+
+### Program Installation
+- **`./scripts/install-all.sh`** - Install all programs at once
+- **`./scripts/install/ghostty.sh`** - Install Ghostty terminal
+- **`./scripts/install/tmux.sh`** - Install Tmux + TPM
 
 ## Usage
 
@@ -154,12 +174,11 @@ git push -u origin main
 
 ## Tmux Plugin Installation
 
-After installing the tmux configuration, you need to install TPM (Tmux Plugin Manager) and the plugins:
+TPM (Tmux Plugin Manager) is automatically installed when you run `./scripts/install-all.sh` or `./scripts/install/tmux.sh`.
+
+To install the tmux plugins:
 
 ```bash
-# Clone TPM
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
 # Start tmux
 tmux
 
