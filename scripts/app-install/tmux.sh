@@ -18,17 +18,7 @@ if command -v tmux &> /dev/null; then
     echo -e "${GREEN}✓${NC} Tmux is already installed"
     tmux -V
 else
-    # Check if yay is installed
-    if ! command -v yay &> /dev/null; then
-        echo -e "${RED}Error: yay is not installed${NC}"
-        echo "Please install yay first:"
-        echo "  git clone https://aur.archlinux.org/yay.git"
-        echo "  cd yay"
-        echo "  makepkg -si"
-        exit 1
-    fi
-    
-    # Install tmux via yay (works for official repos too, no sudo needed)
+    # Install tmux via yay (Omarchy comes with yay pre-installed)
     echo -e "${YELLOW}→${NC} Installing tmux via yay..."
     yay -S --noconfirm tmux
     

@@ -20,17 +20,7 @@ if command -v ghostty &> /dev/null; then
     exit 0
 fi
 
-# Check if yay is installed
-if ! command -v yay &> /dev/null; then
-    echo -e "${RED}Error: yay is not installed${NC}"
-    echo "Please install yay first:"
-    echo "  git clone https://aur.archlinux.org/yay.git"
-    echo "  cd yay"
-    echo "  makepkg -si"
-    exit 1
-fi
-
-# Install ghostty from AUR via yay
+# Install ghostty from AUR via yay (Omarchy comes with yay pre-installed)
 echo -e "${YELLOW}→${NC} Installing ghostty from AUR..."
 yay -S --noconfirm ghostty
 

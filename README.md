@@ -32,17 +32,12 @@ omarchy-dotfiles/
 
 ### Prerequisites
 
-**1. Install yay** (AUR helper - needed for both official and AUR packages):
-```bash
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-```
-
-**2. Install stow** (symlink manager):
+**Install stow** (symlink manager):
 ```bash
 yay -S stow
 ```
+
+> **Note:** These dotfiles are designed for Omarchy, which comes with `yay` pre-installed.
 
 ### Quick Setup
 
