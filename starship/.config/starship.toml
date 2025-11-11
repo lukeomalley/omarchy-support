@@ -16,20 +16,20 @@ repo_root_format = "[$repo_root]($repo_root_style)[$path]($style)[$read_only]($r
 
 # Git branch with icon and "on" connector (only shown in git repos)
 [git_branch]
-format = "[on](dimmed white) [$symbol $branch]($style)"
+format = "[on](dimmed white) [$symbol $branch]($style) "
 symbol = "\ue725"
 style = "cyan"
 
-# Git status - minimal symbols with Nerd Font icons (space before, not after)
+# Git status - minimal symbols with Nerd Font icons (no leading space needed)
 [git_status]
-format = '( [\[$all_status$ahead_behind\]]($style))'
+format = '([\[$all_status$ahead_behind\]]($style))'
 style = "cyan"
 ahead = "⇡${count}"
 diverged = "⇕${ahead_count}⇣${behind_count}"
 behind = "⇣${count}"
 conflicted = "="
 untracked = "?"
-modified = "!"  # Nerd Font dot - minimal indicator
+modified = "!"
 staged = "+"
 renamed = "»"
 deleted = "✘"
