@@ -20,9 +20,9 @@ format = "[on](dimmed white) [$symbol $branch]($style) "
 symbol = "\ue725"
 style = "cyan"
 
-# Git status - minimal symbols with Nerd Font icons (no leading space needed)
+# Git status - minimal symbols with Nerd Font icons (trailing space for cursor)
 [git_status]
-format = '([\[$all_status$ahead_behind\]]($style))'
+format = '([\[$all_status$ahead_behind\]]($style) )'
 style = "cyan"
 ahead = "⇡${count}"
 diverged = "⇕${ahead_count}⇣${behind_count}"
