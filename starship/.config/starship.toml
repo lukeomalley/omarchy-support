@@ -4,8 +4,8 @@
 add_newline = true
 command_timeout = 200
 
-# Format: "directory on  branch" with dimmed connector
-format = "$directory[on](dimmed white) $git_branch$git_status "
+# Format: "directory on  branch" (only shows "on" in git repos)
+format = "$directory$git_branch$git_status "
 
 [directory]
 truncation_length = 3
@@ -14,9 +14,9 @@ style = "bold cyan"
 repo_root_style = "bold cyan"
 repo_root_format = "[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) "
 
-# Git branch with icon
+# Git branch with icon and "on" connector (only shown in git repos)
 [git_branch]
-format = "[$symbol$branch]($style) "
+format = "[on](dimmed white) [$symbol$branch]($style) "
 symbol = " "
 style = "cyan"
 
