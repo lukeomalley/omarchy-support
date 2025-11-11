@@ -41,7 +41,7 @@ sudo pacman -S stow
 
 First, install all required programs:
 ```bash
-./scripts/install-all.sh
+./scripts/app-install/install-all.sh
 ```
 
 This will install:
@@ -52,7 +52,7 @@ This will install:
 
 Then, link your configuration files:
 ```bash
-./scripts/install.sh
+./scripts/install-dotfiles.sh
 ```
 
 This will:
@@ -66,7 +66,7 @@ This will:
 All helper scripts are located in the `scripts/` directory:
 
 ### Configuration Management
-- **`./scripts/install.sh`** - Stow dotfiles (create symlinks)
+- **`./scripts/install-dotfiles.sh`** - Stow dotfiles (create symlinks)
 - **`./scripts/status.sh`** - Shows all packages and whether they're currently stowed
 - **`./scripts/add-config.sh`** - Automates adding a new configuration to the repo
   ```bash
@@ -74,9 +74,9 @@ All helper scripts are located in the `scripts/` directory:
   ```
 
 ### Program Installation
-- **`./scripts/install-all.sh`** - Install all programs at once
-- **`./scripts/install/ghostty.sh`** - Install Ghostty terminal
-- **`./scripts/install/tmux.sh`** - Install Tmux + TPM
+- **`./scripts/app-install/install-all.sh`** - Install all programs at once
+- **`./scripts/app-install/ghostty.sh`** - Install Ghostty terminal
+- **`./scripts/app-install/tmux.sh`** - Install Tmux + TPM
 
 ## Usage
 

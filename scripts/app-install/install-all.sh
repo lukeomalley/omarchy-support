@@ -12,9 +12,8 @@ RED='\033[0;31m'
 BLUE='\033[0;34m'
 NC='\033[0m'
 
-# Get the scripts directory
-SCRIPTS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-INSTALL_DIR="$SCRIPTS_DIR/install"
+# Get the app-install directory (where this script is)
+INSTALL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 echo -e "${BLUE}======================================"
 echo "Omarchy Dotfiles - System Installation"
@@ -84,6 +83,6 @@ if [ ${#FAILED_INSTALLS[@]} -gt 0 ]; then
     echo ""
 fi
 
-echo "Next step: Run './scripts/install.sh' to stow your dotfiles!"
+echo "Next step: Run './scripts/install-dotfiles.sh' to stow your dotfiles!"
 echo ""
 
