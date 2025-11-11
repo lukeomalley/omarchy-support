@@ -11,8 +11,8 @@ YELLOW='\033[1;33m'
 RED='\033[0;31m'
 NC='\033[0m' # No Color
 
-# Get the directory where this script lives
-DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# Get the dotfiles directory (parent of scripts directory)
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 echo -e "${GREEN}======================================"
 echo "Omarchy Dotfiles Installation"
@@ -96,7 +96,7 @@ if ! command -v stow &> /dev/null; then
 fi
 
 # List of packages to install
-PACKAGES=("ghostty" "starship")
+PACKAGES=("ghostty" "starship" "tmux")
 
 # Install all packages
 for package in "${PACKAGES[@]}"; do
@@ -114,7 +114,9 @@ echo ""
 echo "Next steps:"
 echo "  1. Restart ghostty to see your terminal changes"
 echo "  2. Open a new shell or run 'source ~/.bashrc' to see starship changes"
-echo "  3. Your old configs are backed up in ~/.dotfiles-backup/"
-echo "  4. Any changes to the dotfiles will now be reflected immediately!"
+echo "  3. For tmux: restart any running tmux sessions or run 'tmux source ~/.config/tmux/tmux.conf'"
+echo "  4. Install tmux plugins: press 'Ctrl+Space + I' in tmux"
+echo "  5. Your old configs are backed up in ~/.dotfiles-backup/"
+echo "  6. Any changes to the dotfiles will now be reflected immediately!"
 echo ""
 

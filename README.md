@@ -129,8 +129,19 @@ Ghostty terminal emulator configuration with:
 Minimal starship prompt configuration:
 - Shows only current directory (no prompt character)
 - Cyan colored directory with smart truncation
-- Git branch and status commented out (easy to re-enable)
-- Clean and distraction-free prompt
+- Git branch and status with minimal icons
+- Clean and distraction-free prompt with "on" connector
+
+### tmux
+Powerful tmux configuration with vim keybindings:
+- **Prefix key**: `Ctrl+Space` (instead of default Ctrl+b)
+- **Mouse support**: Enabled for easy scrolling and pane resizing
+- **Vi mode**: Vi-style copy mode keybindings
+- **Smart pane navigation**: `Ctrl+h/j/k/l` to move between panes
+- **Current directory**: New panes/windows open in current path
+- **Gruvbox theme**: Dark theme matching ghostty
+- **Plugins**: TPM, tmux-sensible, tmux-yank, vim-tmux-navigator
+- **No confirmations**: Kill panes/windows without prompts
 
 ## Version Control
 
@@ -140,6 +151,28 @@ This repository is tracked with git. To push to a remote:
 git remote add origin <your-repo-url>
 git push -u origin main
 ```
+
+## Tmux Plugin Installation
+
+After installing the tmux configuration, you need to install TPM (Tmux Plugin Manager) and the plugins:
+
+```bash
+# Clone TPM
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# Start tmux
+tmux
+
+# Install plugins by pressing: Ctrl+Space + I (capital i)
+```
+
+**Tmux keybindings:**
+- `Ctrl+Space` - Prefix key
+- `Prefix + I` - Install plugins
+- `Prefix + U` - Update plugins
+- `Prefix + |` or `%` - Split vertically
+- `Prefix + -` or `"` - Split horizontally
+- `Ctrl+h/j/k/l` - Navigate panes (vim-style)
 
 ## Omarchy-Specific Notes
 
