@@ -1,11 +1,11 @@
 # Starship Prompt Configuration
-# Minimal prompt showing only current directory
+# Minimal prompt: directory + git branch + git status
 
 add_newline = true
 command_timeout = 200
 
-# Format: just show directory (removed $character to eliminate the ❯ prompt symbol)
-format = "$directory "
+# Format: directory, git branch, git status (minimal, inline)
+format = "$directory$git_branch$git_status "
 
 [directory]
 truncation_length = 3
@@ -14,24 +14,22 @@ style = "bold cyan"
 repo_root_style = "bold cyan"
 repo_root_format = "[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) "
 
-# Git branch (uncomment to add back git info)
-# [git_branch]
-# format = "[$branch]($style) "
-# style = "italic cyan"
+# Git branch - minimal style
+[git_branch]
+format = "[$branch]($style) "
+style = "cyan"
 
-# Git status (uncomment to add back git status)
-# [git_status]
-# format     = '[$all_status]($style)'
-# style      = "cyan"
-# ahead      = "⇡${count} "
-# diverged   = "⇕⇡${ahead_count}⇣${behind_count} "
-# behind     = "⇣${count} "
-# conflicted = " "
-# up_to_date = " "
-# untracked  = "? "
-# modified   = " "
-# stashed    = ""
-# staged     = ""
-# renamed    = ""
-# deleted    = ""
+# Git status - minimal symbols only
+[git_status]
+format = '[$all_status$ahead_behind]($style)'
+style = "cyan"
+ahead = "⇡${count}"
+diverged = "⇕${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+conflicted = "="
+untracked = "?"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
 
