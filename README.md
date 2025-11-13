@@ -39,7 +39,7 @@ omarchy-support/
         ├── install-all.sh
         ├── stow.sh
         ├── ghostty.sh
-        └── tmux.sh
+        ├── tmux.sh
 ```
 
 Each top-level directory (except `scripts/`) represents a "package" that can be independently managed with stow.
@@ -99,6 +99,7 @@ All helper scripts are located in the `scripts/` directory:
 - **`./scripts/app-install/stow.sh`** - Install GNU Stow
 - **`./scripts/app-install/ghostty.sh`** - Install Ghostty terminal
 - **`./scripts/app-install/tmux.sh`** - Install Tmux + TPM
+- **`./scripts/app-install/wtype.sh`** - Install wtype (Wayland keyboard simulator)
 
 ## Usage
 
@@ -172,9 +173,6 @@ tmux
 ## Omarchy Overrides
 
 Custom Hyprland configuration overrides that extend or modify Omarchy's default settings without touching the base configuration in `~/.local/share/omarchy`.
-
-**Current overrides:**
-- Removes window borders (`border_size = 0`)
 
 **Usage:**
 1. Stow the package: `stow omarchy-overrides`
